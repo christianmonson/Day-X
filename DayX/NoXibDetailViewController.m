@@ -43,6 +43,13 @@ static CGFloat itemHeight = 40;
     self.textView.backgroundColor = [UIColor cyanColor];
     [self.view addSubview:self.textView];
     
+    //Set Clear Button
+    self.clearButton = [[UIButton alloc] initWithFrame:CGRectMake(textFieldWidth + margin * 2, margin + 64, 45, itemHeight)];
+    self.clearButton.backgroundColor = [UIColor blueColor];
+    self.clearButton.titleLabel.text = @"Clear";
+    self.clearButton.tintColor= [UIColor blackColor];
+    [self.view addSubview:self.clearButton];
+    
     
     
 }
