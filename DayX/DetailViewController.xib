@@ -24,7 +24,7 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="46" id="k5r-Hv-oLr"/>
                     </constraints>
-                    <state key="normal" title="Button">
+                    <state key="normal" title="Clear">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <variation key="default">
@@ -60,11 +60,14 @@
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="textView.cornerRadius">
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                             <integer key="value" value="5"/>
                         </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="textView.borderWidth">
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
                             <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="keyPath">
+                            <color key="value" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <variation key="default">
@@ -88,7 +91,9 @@
                 <constraint firstItem="qXm-vA-Gs9" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="5aq-tb-QsN"/>
                 <constraint firstItem="m0a-B9-UC2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="5d5-cc-Abh"/>
                 <constraint firstItem="hFD-4r-igF" firstAttribute="leading" secondItem="m0a-B9-UC2" secondAttribute="trailing" constant="28" id="6Ee-gs-PIx"/>
-                <constraint firstItem="qXm-vA-Gs9" firstAttribute="top" secondItem="m0a-B9-UC2" secondAttribute="bottom" constant="61" id="8E9-HS-7JI"/>
+                <constraint firstItem="qXm-vA-Gs9" firstAttribute="top" secondItem="m0a-B9-UC2" secondAttribute="bottom" constant="61" id="8E9-HS-7JI">
+                    <variation key="heightClass=regular-widthClass=compact" constant="23"/>
+                </constraint>
                 <constraint firstItem="m0a-B9-UC2" firstAttribute="top" secondItem="hFD-4r-igF" secondAttribute="top" id="F0J-YL-jOS"/>
                 <constraint firstAttribute="trailing" secondItem="hFD-4r-igF" secondAttribute="trailing" constant="33" id="XvM-QK-Y4X"/>
                 <constraint firstItem="m0a-B9-UC2" firstAttribute="leading" secondItem="qXm-vA-Gs9" secondAttribute="leading" id="cX0-H0-MAA"/>

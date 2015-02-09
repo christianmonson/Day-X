@@ -13,6 +13,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *titleTextField;
 @property (strong, nonatomic) IBOutlet UIButton *clearButton;
 @property (strong, nonatomic) IBOutlet UITextView *textView;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *doneBarButton;
 
 @end
 
@@ -20,7 +21,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.textView.backgroundColor
 }
 
 - (IBAction)clearButtonPressed:(id)sender {
@@ -31,6 +31,10 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     return YES;
+}
+
+- (IBAction)doneBarButtonPressed:(id)sender {
+    [self.textView resignFirstResponder];
 }
 
 
