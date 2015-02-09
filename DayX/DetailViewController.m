@@ -8,7 +8,11 @@
 
 #import "DetailViewController.h"
 
-@interface DetailViewController ()
+@interface DetailViewController () <UITextViewDelegate, UITextFieldDelegate>
+
+@property (strong, nonatomic) IBOutlet UITextField *titleTextField;
+@property (strong, nonatomic) IBOutlet UIButton *clearButton;
+@property (strong, nonatomic) IBOutlet UITextView *textView;
 
 @end
 
@@ -16,10 +20,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
-    
+    self.textView.backgroundColor
 }
+
+- (IBAction)clearButtonPressed:(id)sender {
+    self.titleTextField.text = @"";
+    self.textView.text = @"";
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

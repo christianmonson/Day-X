@@ -22,7 +22,7 @@
     DetailViewController *viewController = [DetailViewController new];
     NoXibDetailViewController *noXibDetailViewController = [NoXibDetailViewController new];
     
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:noXibDetailViewController];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
     self.window.rootViewController = navController;
     
     [self.window makeKeyAndVisible];

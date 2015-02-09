@@ -30,6 +30,7 @@ static CGFloat itemHeight = 40;
     self.titleTextField = [[UITextField alloc] initWithFrame: CGRectMake(margin, margin + 64, textFieldWidth, itemHeight)];
     self.titleTextField.backgroundColor = [UIColor lightGrayColor];
     self.titleTextField.delegate = self;
+    self.titleTextField.placeholder = @"Enter Entry Title";
     [self.view addSubview:self.titleTextField];
     
     currentTop = 144;
