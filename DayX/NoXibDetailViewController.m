@@ -8,20 +8,15 @@
 
 #import "NoXibDetailViewController.h"
 
-@interface NoXibDetailViewController ()
+@interface NoXibDetailViewController () <UITextFieldDelegate, UITextViewDelegate>
 @property (nonatomic,strong) UITextField *titleTextField;
 @property (nonatomic,strong) UIButton *clearButton;
 @property (nonatomic,strong) UITextView *textView;
 
-
-
 @end
-
 
 static CGFloat margin = 20;
 static CGFloat itemHeight = 40;
-
-
 
 @implementation NoXibDetailViewController
 
@@ -34,6 +29,7 @@ static CGFloat itemHeight = 40;
     //Set Title Text Field
     self.titleTextField = [[UITextField alloc] initWithFrame: CGRectMake(margin, margin + 64, textFieldWidth, itemHeight)];
     self.titleTextField.backgroundColor = [UIColor lightGrayColor];
+    self.titleTextField.delegate = self;
     [self.view addSubview:self.titleTextField];
     
     currentTop = 144;
@@ -41,19 +37,34 @@ static CGFloat itemHeight = 40;
     //Set Text View
     self.textView = [[UITextView alloc] initWithFrame:CGRectMake(margin, currentTop, screenWidth - (margin *2), self.view.frame.size.height / 2)];
     self.textView.backgroundColor = [UIColor cyanColor];
+    self.textView.delegate = self;
     [self.view addSubview:self.textView];
     
     //Set Clear Button
-    self.clearButton = [[UIButton alloc] initWithFrame:CGRectMake(textFieldWidth + margin * 2, margin + 64, 45, itemHeight)];
-    self.clearButton.backgroundColor = [UIColor blueColor];
-    self.clearButton.titleLabel.text = @"Clear";
-    self.clearButton.tintColor= [UIColor blackColor];
+    self.clearButton = [[UIButton alloc] initWithFrame:CGRectMake(textFieldWidth + margin + 10, margin + 64, 70, itemHeight)];
+    //self.clearButton.backgroundColor = [UIColor blueColor];
+    [self.clearButton setTitle:@"Clear" forState:UIControlStateNormal];
+    [self.clearButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [self.clearButton addTarget:self action:@selector(clearButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.clearButton];
-    
-    
     
 }
 
+- (void)clearButtonPressed {
+    self.titleTextField.text = @"cookies!!!";
+    self.textView.text = @"YUMM YUMM!";
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (BOOL)textViewShouldEndEditing:(UITextView *)textView {
+    [textView resignFirstResponder];
+
+    return YES;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
