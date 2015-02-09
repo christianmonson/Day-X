@@ -28,10 +28,21 @@ static CGFloat itemHeight = 40;
 - (void)viewDidLoad {
     [super viewDidLoad];
     CGFloat textFieldWidth = self.view.frame.size.width / 1.5;
+    CGFloat currentTop = 0;
+    CGFloat screenWidth = self.view.frame.size.width;
 
+    //Set Title Text Field
     self.titleTextField = [[UITextField alloc] initWithFrame: CGRectMake(margin, margin + 64, textFieldWidth, itemHeight)];
     self.titleTextField.backgroundColor = [UIColor lightGrayColor];
     [self.view addSubview:self.titleTextField];
+    
+    currentTop = 144;
+    
+    //Set Text View
+    self.textView = [[UITextView alloc] initWithFrame:CGRectMake(margin, currentTop, screenWidth - (margin *2), self.view.frame.size.height / 2)];
+    self.textView.backgroundColor = [UIColor cyanColor];
+    [self.view addSubview:self.textView];
+    
     
     
 }
