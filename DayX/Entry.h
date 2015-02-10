@@ -22,4 +22,8 @@ static NSString * const timeStampKey = @"timeStampKey";
 
 - (NSDictionary *)entryDictionary;
 
++ (NSMutableArray *) loadEntriesFromDefaults;
+
++ (void) storeEntiresInDefaults: (NSArray *)entries;
+
 @end
