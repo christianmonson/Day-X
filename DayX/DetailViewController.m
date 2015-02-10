@@ -52,7 +52,6 @@ static NSString * const completeJournalEntryKey = @"completeJournalEntryKey";
 - (void) updateViewWithJournalDictionary: (NSDictionary *) journalEntryDictionary {
     self.titleTextField.text = journalEntryDictionary [entryTitleKey];
     self.textView.text = journalEntryDictionary [entryTextKey];
-    self.dateTextField.text = [NSString stringWithFormat:@"%@", journalEntryDictionary [@"entryDate"];
 }
 
 
