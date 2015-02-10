@@ -8,12 +8,18 @@
 
 #import "DetailViewController.h"
 
+static NSString * const entryTitleKey = @"entryTitleKey";
+static NSString * const  entryTextKey = @"entryTextKey";
+static NSString * const completeJournalEntryKey = @"completeJournalEntryKey";
+
 @interface DetailViewController () <UITextViewDelegate, UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextField *titleTextField;
 @property (strong, nonatomic) IBOutlet UIButton *clearButton;
 @property (strong, nonatomic) IBOutlet UITextView *textView;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *doneBarButton;
+@property (strong, nonatomic) IBOutlet UIButton *saveButton;
+@property (strong, nonatomic) IBOutlet UITextField *dateTextField;
 
 @end
 
@@ -21,12 +27,34 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.titleTextField.clearButtonMode = YES;
+    
+    NSDictionary *journalEntryDictionary = [[NSUserDefaults standardUserDefaults] objectForKey:completeJournalEntryKey];
+    [self updateViewWithJournalDictionary:journalEntryDictionary];
+    
+    
 }
 
 - (IBAction)clearButtonPressed:(id)sender {
-    self.titleTextField.text = @"";
+    //self.titleTextField.text = @"";
     self.textView.text = @"";
 }
+- (IBAction)saveButtonPressed:(UIButton *)sender {
+    NSMutableDictionary *entryDictionarySaveButton = [NSMutableDictionary new];
+    entryDictionarySaveButton [entryTitleKey] = self.titleTextField.text;
+    entryDictionarySaveButton [entryTextKey] = self.textView.text;
+    entryDictionarySaveButton [@"entryDate"] = [NSDate date];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:entryDictionarySaveButton forKey:completeJournalEntryKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void) updateViewWithJournalDictionary: (NSDictionary *) journalEntryDictionary {
+    self.titleTextField.text = journalEntryDictionary [entryTitleKey];
+    self.textView.text = journalEntryDictionary [entryTextKey];
+    self.dateTextField.text = [NSString stringWithFormat:@"%@", journalEntryDictionary [@"entryDate"];
+}
+
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];

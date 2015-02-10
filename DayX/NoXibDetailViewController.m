@@ -27,10 +27,11 @@ static CGFloat itemHeight = 40;
     CGFloat screenWidth = self.view.frame.size.width;
 
     //Set Title Text Field
-    self.titleTextField = [[UITextField alloc] initWithFrame: CGRectMake(margin, margin + 64, textFieldWidth, itemHeight)];
+    self.titleTextField = [[UITextField alloc] initWithFrame: CGRectMake(margin, margin + 64, screenWidth - (margin *2), itemHeight)];
     self.titleTextField.backgroundColor = [UIColor lightGrayColor];
     self.titleTextField.delegate = self;
     self.titleTextField.placeholder = @"Enter Entry Title";
+    self.titleTextField.clearButtonMode = YES;
     [self.view addSubview:self.titleTextField];
     
     currentTop = 144;
@@ -41,13 +42,13 @@ static CGFloat itemHeight = 40;
     self.textView.delegate = self;
     [self.view addSubview:self.textView];
     
-    //Set Clear Button
-    self.clearButton = [[UIButton alloc] initWithFrame:CGRectMake(textFieldWidth + margin + 10, margin + 64, 70, itemHeight)];
-    //self.clearButton.backgroundColor = [UIColor blueColor];
-    [self.clearButton setTitle:@"Clear" forState:UIControlStateNormal];
-    [self.clearButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    [self.clearButton addTarget:self action:@selector(clearButtonPressed) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.clearButton];
+//    //Set Clear Button
+//    self.clearButton = [[UIButton alloc] initWithFrame:CGRectMake(textFieldWidth + margin + 10, margin + 64, 70, itemHeight)];
+//    //self.clearButton.backgroundColor = [UIColor blueColor];
+//    [self.clearButton setTitle:@"Clear" forState:UIControlStateNormal];
+//    [self.clearButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+//    [self.clearButton addTarget:self action:@selector(clearButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:self.clearButton];
     
 }
 
