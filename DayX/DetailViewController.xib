@@ -9,7 +9,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController">
             <connections>
                 <outlet property="clearButton" destination="hFD-4r-igF" id="SJq-ix-UIq"/>
-                <outlet property="dateTextField" destination="szP-BA-M5l" id="Jr4-z6-Hmg"/>
                 <outlet property="saveButton" destination="gm3-pQ-Ggx" id="0Gw-RG-ruL"/>
                 <outlet property="textView" destination="qXm-vA-Gs9" id="F8o-u8-FjP"/>
                 <outlet property="titleTextField" destination="m0a-B9-UC2" id="1px-kN-yLm"/>
@@ -22,11 +21,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFD-4r-igF">
-                    <rect key="frame" x="249" y="429" width="46" height="30"/>
+                    <rect key="frame" x="19" y="440" width="121" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="46" id="lke-fG-gUF"/>
+                        <constraint firstAttribute="width" constant="121" id="ck9-tV-EAs"/>
                     </constraints>
-                    <state key="normal" title="Clear">
+                    <state key="normal" title="Clear All">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -62,16 +61,8 @@
                         <outlet property="delegate" destination="-1" id="pd7-sT-d2y"/>
                     </connections>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="szP-BA-M5l">
-                    <rect key="frame" x="8" y="450" width="117" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="117" id="dPW-ci-2sj"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gm3-pQ-Ggx">
-                    <rect key="frame" x="143" y="493" width="34" height="30"/>
+                    <rect key="frame" x="236" y="440" width="34" height="30"/>
                     <state key="normal" title="Save">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -82,19 +73,17 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="qXm-vA-Gs9" firstAttribute="top" secondItem="m0a-B9-UC2" secondAttribute="bottom" constant="26" id="5Ou-bM-9Jj"/>
-                <constraint firstAttribute="trailing" secondItem="hFD-4r-igF" secondAttribute="trailing" constant="25" id="7dx-Tc-EVl"/>
-                <constraint firstItem="qXm-vA-Gs9" firstAttribute="centerX" secondItem="m0a-B9-UC2" secondAttribute="centerX" id="8YO-0K-FbI"/>
-                <constraint firstItem="gm3-pQ-Ggx" firstAttribute="centerX" secondItem="qXm-vA-Gs9" secondAttribute="centerX" id="CwY-6d-ZQc"/>
-                <constraint firstAttribute="bottom" secondItem="gm3-pQ-Ggx" secondAttribute="bottom" constant="45" id="KSR-pj-IQf"/>
-                <constraint firstItem="gm3-pQ-Ggx" firstAttribute="top" secondItem="qXm-vA-Gs9" secondAttribute="bottom" constant="72" id="OdP-Vr-oT9"/>
-                <constraint firstItem="qXm-vA-Gs9" firstAttribute="leading" secondItem="szP-BA-M5l" secondAttribute="leading" id="X6q-9q-Sao"/>
-                <constraint firstItem="qXm-vA-Gs9" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="ba3-Hi-JSV"/>
-                <constraint firstItem="hFD-4r-igF" firstAttribute="top" secondItem="qXm-vA-Gs9" secondAttribute="bottom" constant="8" symbolic="YES" id="brf-hP-Z2m"/>
-                <constraint firstItem="m0a-B9-UC2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="13" id="de6-1Q-Un5"/>
-                <constraint firstItem="m0a-B9-UC2" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="86" id="eic-Wl-ZzH"/>
-                <constraint firstItem="szP-BA-M5l" firstAttribute="top" secondItem="qXm-vA-Gs9" secondAttribute="bottom" constant="29" id="g7b-4e-QOY"/>
-                <constraint firstItem="qXm-vA-Gs9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="hvc-wA-xY4"/>
+                <constraint firstItem="hFD-4r-igF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="19" id="QMf-gp-d63"/>
+                <constraint firstItem="qXm-vA-Gs9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="QPC-cj-oBn"/>
+                <constraint firstItem="m0a-B9-UC2" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="86" id="S4q-ez-XA0"/>
+                <constraint firstAttribute="trailing" secondItem="gm3-pQ-Ggx" secondAttribute="trailing" constant="50" id="ScU-15-wg2"/>
+                <constraint firstAttribute="bottom" secondItem="hFD-4r-igF" secondAttribute="bottom" constant="98" id="c2b-kY-csP"/>
+                <constraint firstItem="gm3-pQ-Ggx" firstAttribute="baseline" secondItem="hFD-4r-igF" secondAttribute="baseline" id="l4J-8O-m6B"/>
+                <constraint firstItem="qXm-vA-Gs9" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="ley-QP-WsK"/>
+                <constraint firstItem="hFD-4r-igF" firstAttribute="top" secondItem="qXm-vA-Gs9" secondAttribute="bottom" constant="19" id="mLj-v4-g1c"/>
+                <constraint firstItem="qXm-vA-Gs9" firstAttribute="centerX" secondItem="m0a-B9-UC2" secondAttribute="centerX" id="of0-oy-rNm"/>
+                <constraint firstItem="m0a-B9-UC2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="13" id="ssd-U9-vbP"/>
+                <constraint firstItem="qXm-vA-Gs9" firstAttribute="top" secondItem="m0a-B9-UC2" secondAttribute="bottom" constant="26" id="tSL-qh-hal"/>
             </constraints>
             <point key="canvasLocation" x="169" y="103"/>
         </view>

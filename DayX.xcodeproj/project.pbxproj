@@ -22,6 +22,7 @@
 		711A508519388096005642EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 711A506D19388095005642EF /* UIKit.framework */; };
 		711A508D19388096005642EF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 711A508B19388096005642EF /* InfoPlist.strings */; };
 		711A508F19388096005642EF /* DayXTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 711A508E19388096005642EF /* DayXTests.m */; };
+		EB88F7A21A8ABAFA00DB4195 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = EB88F7A11A8ABAFA00DB4195 /* Entry.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		711A508A19388096005642EF /* DayXTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DayXTests-Info.plist"; sourceTree = "<group>"; };
 		711A508C19388096005642EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		711A508E19388096005642EF /* DayXTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DayXTests.m; sourceTree = "<group>"; };
+		EB88F7A01A8ABAFA00DB4195 /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entry.h; sourceTree = "<group>"; };
+		EB88F7A11A8ABAFA00DB4195 /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,8 @@
 			children = (
 				711A507819388095005642EF /* DXAppDelegate.h */,
 				711A507919388095005642EF /* DXAppDelegate.m */,
+				EB88F7A01A8ABAFA00DB4195 /* Entry.h */,
+				EB88F7A11A8ABAFA00DB4195 /* Entry.m */,
 				6AB0F1721A89544100EA5DD9 /* DetailViewController.h */,
 				6AB0F1731A89544100EA5DD9 /* DetailViewController.m */,
 				6AB0F1741A89544100EA5DD9 /* DetailViewController.xib */,
@@ -255,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AB0F1791A89558A00EA5DD9 /* NoXibDetailViewController.m in Sources */,
+				EB88F7A21A8ABAFA00DB4195 /* Entry.m in Sources */,
 				711A507A19388095005642EF /* DXAppDelegate.m in Sources */,
 				711A507619388095005642EF /* main.m in Sources */,
 				6AB0F1751A89544100EA5DD9 /* DetailViewController.m in Sources */,

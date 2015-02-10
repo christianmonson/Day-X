@@ -36,7 +36,7 @@ static NSString * const completeJournalEntryKey = @"completeJournalEntryKey";
 }
 
 - (IBAction)clearButtonPressed:(id)sender {
-    //self.titleTextField.text = @"";
+    self.titleTextField.text = @"";
     self.textView.text = @"";
 }
 - (IBAction)saveButtonPressed:(UIButton *)sender {
