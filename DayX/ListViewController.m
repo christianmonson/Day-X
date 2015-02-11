@@ -22,6 +22,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(add:)];
+    self.navigationItem.rightBarButtonItem = rightBarButtonItem;
+    
     self.dataSource = [ListTableViewDataSource new];
     
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
@@ -31,6 +34,11 @@
     self.tableView.delegate = self;
     [self.dataSource registerTableView:self.tableView];
 
+}
+
+- (IBAction)add:(id)sender {
+    DetailViewController *detailViewController = [DetailViewController new];
+    [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
 
