@@ -7,8 +7,13 @@
 //
 
 #import "ListViewController.h"
+#import "ListTableViewDataSource.h"
+#import "DetailViewController.h"
 
 @interface ListViewController ()
+
+@property (nonatomic,strong) UITableView *tableView;
+@property (nonatomic,strong) ListTableViewDataSource *dataSource;
 
 @end
 
@@ -16,8 +21,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.dataSource = [ListTableViewDataSource new];
+    
+    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+    [self.view addSubview:self.tableView];
+    
+    self.tableView.dataSource = self.dataSource;
+    self.tableView.delegate = self;
+    [self.dataSource registerTableView:self.tableView];
+
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
