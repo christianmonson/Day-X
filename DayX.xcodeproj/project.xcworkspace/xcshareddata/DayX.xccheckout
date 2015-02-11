@@ -5,13 +5,13 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>0BCC656B-02CD-4CD6-A48B-376C304D2FC9</string>
+	<string>1AD4C42B-768D-462D-8EC0-DCEBD97CBFF7</string>
 	<key>IDESourceControlProjectName</key>
 	<string>DayX</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>E63215F344090B4E7AB5DD5BA8D3F4E9ACDB549C</key>
-		<string>https://github.com/prush08/Day-X.git</string>
+		<string>https://github.com/christianmonson/Day-X.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>DayX.xcodeproj</string>
@@ -21,7 +21,7 @@
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/prush08/Day-X.git</string>
+	<string>https://github.com/christianmonson/Day-X.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>

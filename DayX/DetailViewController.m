@@ -17,9 +17,7 @@ static NSString * const completeJournalEntryKey = @"completeJournalEntryKey";
 @property (strong, nonatomic) IBOutlet UITextField *titleTextField;
 @property (strong, nonatomic) IBOutlet UIButton *clearButton;
 @property (strong, nonatomic) IBOutlet UITextView *textView;
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *doneBarButton;
 @property (strong, nonatomic) IBOutlet UIButton *saveButton;
-@property (strong, nonatomic) IBOutlet UITextField *dateTextField;
 
 @end
 
@@ -58,10 +56,6 @@ static NSString * const completeJournalEntryKey = @"completeJournalEntryKey";
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     return YES;
-}
-
-- (IBAction)doneBarButtonPressed:(id)sender {
-    [self.textView resignFirstResponder];
 }
 
 

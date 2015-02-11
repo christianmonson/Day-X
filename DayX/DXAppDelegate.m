@@ -9,7 +9,7 @@
 #import "DXAppDelegate.h"
 #import "DetailViewController.h"
 #import "NoXibDetailViewController.h"
-
+#import "ListViewController.h"
 
 @implementation DXAppDelegate
 
@@ -20,10 +20,12 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
     DetailViewController *viewController = [DetailViewController new];
-    NoXibDetailViewController *noXibDetailViewController = [NoXibDetailViewController new];
+//    NoXibDetailViewController *noXibDetailViewController = [NoXibDetailViewController new];
     
+    UINavigationController *tableNavigationController = [[UINavigationController alloc]initWithRootViewController:[ListViewController new]];
+    self.window.rootViewController = tableNavigationController;
+
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
-    self.window.rootViewController = navController;
     
     [self.window makeKeyAndVisible];
     return YES;

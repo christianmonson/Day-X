@@ -55,9 +55,8 @@ static NSString * const entriesKey = @"entries";
     }
     
     [[NSUserDefaults standardUserDefaults] setObject:entryDictionaries forKey:entriesKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
-                                         
-                                        
 }
 
 @end
