@@ -10,7 +10,7 @@
 #import "ListTableViewDataSource.h"
 #import "DetailViewController.h"
 
-@interface ListViewController ()
+@interface ListViewController () <UITableViewDelegate>
 
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) ListTableViewDataSource *dataSource;
@@ -41,6 +41,9 @@
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:1];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

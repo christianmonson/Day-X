@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "Entry.h"
 
 static NSString * const entryTitleKey = @"entryTitleKey";
 static NSString * const  entryTextKey = @"entryTextKey";
@@ -19,6 +20,8 @@ static NSString * const completeJournalEntryKey = @"completeJournalEntryKey";
 @property (strong, nonatomic) IBOutlet UITextView *textView;
 @property (strong, nonatomic) IBOutlet UIButton *saveButton;
 
+@property (strong, nonatomic) Entry *entry;
+
 @end
 
 @implementation DetailViewController
@@ -29,7 +32,8 @@ static NSString * const completeJournalEntryKey = @"completeJournalEntryKey";
     
     NSDictionary *journalEntryDictionary = [[NSUserDefaults standardUserDefaults] objectForKey:completeJournalEntryKey];
     [self updateViewWithJournalDictionary:journalEntryDictionary];
-    
+    UIBarButtonItem *saveBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save:)];
+    self.navigationItem.rightBarButtonItem = saveBarButton;
     
 }
 
@@ -37,16 +41,31 @@ static NSString * const completeJournalEntryKey = @"completeJournalEntryKey";
     self.titleTextField.text = @"";
     self.textView.text = @"";
 }
-- (IBAction)saveButtonPressed:(UIButton *)sender {
-    NSMutableDictionary *entryDictionarySaveButton = [NSMutableDictionary new];
-    entryDictionarySaveButton [entryTitleKey] = self.titleTextField.text;
-    entryDictionarySaveButton [entryTextKey] = self.textView.text;
-    entryDictionarySaveButton [@"entryDate"] = [NSDate date];
-    
-    [[NSUserDefaults standardUserDefaults] setObject:entryDictionarySaveButton forKey:completeJournalEntryKey];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-}
+//- (IBAction)saveButtonPressed:(UIButton *)sender {
+//    NSMutableDictionary *entryDictionarySaveButton = [NSMutableDictionary new];
+//    entryDictionarySaveButton [entryTitleKey] = self.titleTextField.text;
+//    entryDictionarySaveButton [entryTextKey] = self.textView.text;
+//    entryDictionarySaveButton [@"entryDate"] = [NSDate date];
+//    
+//    [[NSUserDefaults standardUserDefaults] setObject:entryDictionarySaveButton forKey:completeJournalEntryKey];
+//    [[NSUserDefaults standardUserDefaults] synchronize];
+//}
 
+- (IBAction)save:(id)sender {
+    
+    if (!self.entry) {
+        self.entry = [[Entry alloc] init];
+        self.entry.title = self.titleTextField.text;
+        self.entry.text = self.textView.text;
+    }
+    
+    NSMutableArray *entries = [Entry loadEntriesFromDefaults];
+    [entries addObject:self.entry];
+    
+    [Entry storeEntiresInDefaults:entries];
+    
+    [self.navigationController popViewControllerAnimated:1];
+}
 - (void) updateViewWithJournalDictionary: (NSDictionary *) journalEntryDictionary {
     self.titleTextField.text = journalEntryDictionary [entryTitleKey];
     self.textView.text = journalEntryDictionary [entryTextKey];

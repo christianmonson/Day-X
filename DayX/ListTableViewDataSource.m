@@ -27,9 +27,10 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
     NSArray *entries = [Entry loadEntriesFromDefaults];
     return entries.count;
 }
+
+
 
 @end
