@@ -23,6 +23,7 @@
 		711A508D19388096005642EF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 711A508B19388096005642EF /* InfoPlist.strings */; };
 		711A508F19388096005642EF /* DayXTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 711A508E19388096005642EF /* DayXTests.m */; };
 		EB54DA221A8BFD5300DE9720 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB54DA211A8BFD5300DE9720 /* ListViewController.m */; };
+		EB54DA251A8BFF3100DE9720 /* ListTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = EB54DA241A8BFF3100DE9720 /* ListTableViewDataSource.m */; };
 		EB88F7A21A8ABAFA00DB4195 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = EB88F7A11A8ABAFA00DB4195 /* Entry.m */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,8 @@
 		711A508E19388096005642EF /* DayXTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DayXTests.m; sourceTree = "<group>"; };
 		EB54DA201A8BFD5300DE9720 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
 		EB54DA211A8BFD5300DE9720 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
+		EB54DA231A8BFF3100DE9720 /* ListTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListTableViewDataSource.h; sourceTree = "<group>"; };
+		EB54DA241A8BFF3100DE9720 /* ListTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListTableViewDataSource.m; sourceTree = "<group>"; };
 		EB88F7A01A8ABAFA00DB4195 /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entry.h; sourceTree = "<group>"; };
 		EB88F7A11A8ABAFA00DB4195 /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,6 +126,8 @@
 			children = (
 				711A507819388095005642EF /* DXAppDelegate.h */,
 				711A507919388095005642EF /* DXAppDelegate.m */,
+				EB54DA231A8BFF3100DE9720 /* ListTableViewDataSource.h */,
+				EB54DA241A8BFF3100DE9720 /* ListTableViewDataSource.m */,
 				EB88F7A01A8ABAFA00DB4195 /* Entry.h */,
 				EB88F7A11A8ABAFA00DB4195 /* Entry.m */,
 				EB54DA201A8BFD5300DE9720 /* ListViewController.h */,
@@ -266,6 +271,7 @@
 			files = (
 				6AB0F1791A89558A00EA5DD9 /* NoXibDetailViewController.m in Sources */,
 				EB88F7A21A8ABAFA00DB4195 /* Entry.m in Sources */,
+				EB54DA251A8BFF3100DE9720 /* ListTableViewDataSource.m in Sources */,
 				EB54DA221A8BFD5300DE9720 /* ListViewController.m in Sources */,
 				711A507A19388095005642EF /* DXAppDelegate.m in Sources */,
 				711A507619388095005642EF /* main.m in Sources */,
