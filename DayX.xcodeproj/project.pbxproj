@@ -64,8 +64,8 @@
 		EB54DA211A8BFD5300DE9720 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 		EB54DA231A8BFF3100DE9720 /* ListTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListTableViewDataSource.h; sourceTree = "<group>"; };
 		EB54DA241A8BFF3100DE9720 /* ListTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListTableViewDataSource.m; sourceTree = "<group>"; };
-		EB54DA261A8C1F8B00DE9720 /* EntryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntryController.h; sourceTree = "<group>"; };
-		EB54DA271A8C1F8B00DE9720 /* EntryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntryController.m; sourceTree = "<group>"; };
+		EB54DA261A8C1F8B00DE9720 /* EntryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EntryController.h; path = ../EntryController.h; sourceTree = "<group>"; };
+		EB54DA271A8C1F8B00DE9720 /* EntryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EntryController.m; path = ../EntryController.m; sourceTree = "<group>"; };
 		EB88F7A01A8ABAFA00DB4195 /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entry.h; sourceTree = "<group>"; };
 		EB88F7A11A8ABAFA00DB4195 /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,8 +97,6 @@
 		711A505D19388095005642EF = {
 			isa = PBXGroup;
 			children = (
-				EB54DA261A8C1F8B00DE9720 /* EntryController.h */,
-				EB54DA271A8C1F8B00DE9720 /* EntryController.m */,
 				711A506F19388095005642EF /* DayX */,
 				711A508819388096005642EF /* DayXTests */,
 				711A506819388095005642EF /* Frameworks */,
@@ -129,6 +127,8 @@
 		711A506F19388095005642EF /* DayX */ = {
 			isa = PBXGroup;
 			children = (
+				EB54DA261A8C1F8B00DE9720 /* EntryController.h */,
+				EB54DA271A8C1F8B00DE9720 /* EntryController.m */,
 				711A507819388095005642EF /* DXAppDelegate.h */,
 				711A507919388095005642EF /* DXAppDelegate.m */,
 				EB54DA231A8BFF3100DE9720 /* ListTableViewDataSource.h */,
