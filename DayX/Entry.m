@@ -15,8 +15,8 @@ static NSString * const entriesKey = @"entries";
 - (id)initWithDictionary:(NSDictionary *)dictionary {
     self = [super init];
     if (self) {
-        self.title = dictionary[titleKey];
-        self.text = dictionary[textKey];
+        self.title = dictionary[titleNewKey];
+        self.text = dictionary[textNewKey];
         self.timestamp = dictionary[timestampKey];
     }
     return self;
@@ -26,10 +26,10 @@ static NSString * const entriesKey = @"entries";
     
     NSMutableDictionary *entryDictionary = [NSMutableDictionary new];
     if (self.title) {
-        [entryDictionary setObject:self.title forKey:titleKey];
+        [entryDictionary setObject:self.title forKey:titleNewKey];
     }
     if (self.text) {
-        [entryDictionary setObject:self.text forKey:textKey];
+        [entryDictionary setObject:self.text forKey:textNewKey];
     }
     if (self.timestamp) {
         [entryDictionary setObject:self.timestamp forKey:timestampKey];

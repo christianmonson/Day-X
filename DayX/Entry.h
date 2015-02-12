@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-static NSString * const titleKey = @"title";
-static NSString * const textKey = @"text";
+static NSString * const titleNewKey = @"title";
+static NSString * const textNewKey = @"text";
 static NSString * const timestampKey = @"timestamp";
 
 @interface Entry : NSObject

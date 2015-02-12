@@ -43,6 +43,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:1];
+    [self.navigationController pushViewController:[DetailViewController new] animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
