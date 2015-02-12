@@ -7,7 +7,9 @@
 //
 
 #import "EntryController.h"
+
 static NSString * const entryListKey = @"entryList";
+
 @interface EntryController ()
 
 @property (nonatomic,strong) NSArray *entries;
@@ -79,7 +81,7 @@ static NSString * const entryListKey = @"entryList";
     for (NSDictionary *entry in entryDictionaries) {
         [entries addObject:[[Entry alloc] initWithDictionary:entry]];
     }
-    self.entries = entryDictionaries;
+    self.entries = entries;
     
 }
 

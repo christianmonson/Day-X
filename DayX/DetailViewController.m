@@ -34,12 +34,16 @@ static NSString * const completeJournalEntryKey = @"completeJournalEntryKey";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.titleTextField.clearButtonMode = YES;
     
-    NSDictionary *journalEntryDictionary = [[NSUserDefaults standardUserDefaults] objectForKey:completeJournalEntryKey];
-    [self updateViewWithJournalDictionary:journalEntryDictionary];
+    self.titleTextField.delegate = self;
+    self.textView.delegate = self;
     
-    UIBarButtonItem *saveBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save:)];
+    self.titleTextField.text = self.entry.title;
+    self.textView.text = self.entry.text;
+    
+    UIBarButtonItem *saveBarButton = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStylePlain target:self action:@selector(save:)];
     self.navigationItem.rightBarButtonItem = saveBarButton;
     
 }
