@@ -7,7 +7,7 @@
 //
 
 #import "EntryController.h"
-
+static NSString * const entryListKey = @"entryList";
 @interface EntryController ()
 
 @property (nonatomic,strong) NSArray *entries;
@@ -37,7 +37,7 @@
     [mutableEntries addObject:entry];
     
     self.entries = mutableEntries;
-//    [self synchronize];
+    [self synchronize];
 
 }
 
@@ -51,7 +51,7 @@
     [mutableEntries removeObject:entry];
     
     self.entries = mutableEntries;
-//    [self synchronize];
+    [self synchronize];
 
 }
 
@@ -69,7 +69,30 @@
     }
     
     self.entries = mutableEntries;
-//    [self synchronize];
+    [self synchronize];
+}
+
+- (void) loadFromDefaults {
+    NSArray *entryDictionaries = [[NSUserDefaults standardUserDefaults] objectForKey:entryListKey];
+    
+    NSMutableArray *entries = [NSMutableArray new];
+    for (NSDictionary *entry in entryDictionaries) {
+        [entries addObject:[[Entry alloc] initWithDictionary:entry]];
+    }
+    self.entries = entryDictionaries;
+    
+}
+
+- (void)synchronize {
+    
+    NSMutableArray *entryDictionaries = [NSMutableArray new];
+    for (Entry *entry in self.entries) {
+        [entryDictionaries addObject:[entry entryDictionary]];
+    }
+    
+    [[NSUserDefaults standardUserDefaults] setObject:entryDictionaries forKey:entryListKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
 }
 
 @end
