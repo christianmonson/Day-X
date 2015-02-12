@@ -11,7 +11,7 @@
 
 @interface EntryController : NSObject
 
-@property (nonatomic,strong,readonly) NSArray *entries;
+@property (nonatomic, strong, readonly) NSArray *entries;
 
 + (EntryController *)sharedInstance;
 

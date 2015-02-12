@@ -7,7 +7,7 @@
 //
 
 #import "DXAppDelegate.h"
-#import "EditorViewController.h"
+#import "DetailViewController.h"
 #import "NoXibDetailViewController.h"
 #import "ListViewController.h"
 
@@ -17,16 +17,11 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    ListViewController *viewContorller = [ListViewController new];
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:viewContorller];
+    
     self.window.backgroundColor = [UIColor whiteColor];
-    
-    EditorViewController *viewController = [EditorViewController new];
-//    NoXibDetailViewController *noXibDetailViewController = [NoXibDetailViewController new];
-    
-    UINavigationController *tableNavigationController = [[UINavigationController alloc]initWithRootViewController:[ListViewController new]];
-    self.window.rootViewController = tableNavigationController;
-
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
-    
     [self.window makeKeyAndVisible];
     return YES;
 }

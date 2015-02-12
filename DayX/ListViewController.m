@@ -10,20 +10,28 @@
 #import "ListTableViewDataSource.h"
 #import "DetailViewController.h"
 
+#import "EntryController.h"
+
 @interface ListViewController () <UITableViewDelegate>
 
-@property (nonatomic,strong) UITableView *tableView;
-@property (nonatomic,strong) ListTableViewDataSource *dataSource;
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) ListTableViewDataSource *dataSource;
 
 @end
 
 @implementation ListViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.tableView reloadData];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(add:)];
-    self.navigationItem.rightBarButtonItem = rightBarButtonItem;
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(add:)];
+    self.navigationItem.rightBarButtonItem = addButton;
     
     self.dataSource = [ListTableViewDataSource new];
     
@@ -33,22 +41,34 @@
     self.tableView.dataSource = self.dataSource;
     self.tableView.delegate = self;
     [self.dataSource registerTableView:self.tableView];
-
 }
 
-- (IBAction)add:(id)sender {
-    DetailViewController *detailViewController = [DetailViewController new];
-    [self.navigationController pushViewController:detailViewController animated:YES];
-}
+//- (IBAction)add:(id)sender {
+//    DetailViewController *detailViewController = [DetailViewController new];
+//    [self.navigationController pushViewController:detailViewController animated:YES];
+//}
+
+
+// the problem was here!!! we needed to combine the above method with the one below
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:1];
-    [self.navigationController pushViewController:[DetailViewController new] animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    DetailViewController *detailViewController = [DetailViewController new];
+    [detailViewController updateWithEntry:[EntryController sharedInstance].entries[indexPath.row]];
+    [self.navigationController pushViewController:detailViewController animated:YES];
+    
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)add:(id)sender {
+    
+    DetailViewController *detailViewController = [DetailViewController new];
+    [self.navigationController pushViewController:detailViewController animated:YES];
+    
 }
 
 /*

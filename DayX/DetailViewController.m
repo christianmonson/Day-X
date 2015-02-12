@@ -56,7 +56,7 @@ static NSString * const completeJournalEntryKey = @"completeJournalEntryKey";
 
 - (IBAction)save:(id)sender {
     
-    Entry *entry = [[Entry alloc]initWithDictionary:@{titleNewKey:self.titleTextField.text, textNewKey: self.textView.text}];
+    Entry *entry = [[Entry alloc]initWithDictionary:@{titleKey:self.titleTextField.text, textKey: self.textView.text}];
     
     if (self.entry) {
         [[EntryController sharedInstance] replaceEntry:self.entry withEntry:entry];
@@ -69,8 +69,8 @@ static NSString * const completeJournalEntryKey = @"completeJournalEntryKey";
 }
 
 - (void) updateViewWithJournalDictionary: (NSDictionary *) journalEntryDictionary {
-    self.titleTextField.text = journalEntryDictionary [titleNewKey];
-    self.textView.text = journalEntryDictionary [textNewKey];
+    self.titleTextField.text = journalEntryDictionary [titleKey];
+    self.textView.text = journalEntryDictionary [textKey];
 }
 
 

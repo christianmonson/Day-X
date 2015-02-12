@@ -10,6 +10,6 @@
 
 @interface ListTableViewDataSource : NSObject <UITableViewDataSource>
 
-- (void)registerTableView:(UITableView *) tableView;
+- (void)registerTableView:(UITableView *)tableView;
 
 @end

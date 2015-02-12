@@ -35,7 +35,7 @@ static NSString * const entryListKey = @"entryList";
         return;
     }
     
-    NSMutableArray *mutableEntries = [[NSMutableArray alloc]initWithArray:self.entries];
+    NSMutableArray *mutableEntries = [[NSMutableArray alloc] initWithArray:self.entries];
     [mutableEntries addObject:entry];
     
     self.entries = mutableEntries;
@@ -54,7 +54,6 @@ static NSString * const entryListKey = @"entryList";
     
     self.entries = mutableEntries;
     [self synchronize];
-
 }
 
 - (void)replaceEntry:(NSDictionary *)oldEntry withEntry:(NSDictionary *)newEntry{
@@ -72,6 +71,7 @@ static NSString * const entryListKey = @"entryList";
     
     self.entries = mutableEntries;
     [self synchronize];
+
 }
 
 - (void) loadFromDefaults {
@@ -81,6 +81,7 @@ static NSString * const entryListKey = @"entryList";
     for (NSDictionary *entry in entryDictionaries) {
         [entries addObject:[[Entry alloc] initWithDictionary:entry]];
     }
+    
     self.entries = entries;
     
 }
@@ -94,7 +95,6 @@ static NSString * const entryListKey = @"entryList";
     
     [[NSUserDefaults standardUserDefaults] setObject:entryDictionaries forKey:entryListKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
-    
 }
 
 @end
