@@ -19,37 +19,27 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="qXm-vA-Gs9">
-                    <rect key="frame" x="8" y="142" width="304" height="279"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m0a-B9-UC2">
+                    <rect key="frame" x="16" y="86" width="189" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <textInputTraits key="textInputTraits"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="5"/>
+                            <integer key="value" value="10"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
                             <integer key="value" value="1"/>
                         </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="keyPath">
-                            <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                            <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
-                    <connections>
-                        <outlet property="delegate" destination="-1" id="Qgl-OK-yB3"/>
-                    </connections>
-                </textView>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m0a-B9-UC2">
-                    <rect key="frame" x="13" y="86" width="294" height="30"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                    <textInputTraits key="textInputTraits"/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="pd7-sT-d2y"/>
                     </connections>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFD-4r-igF">
-                    <rect key="frame" x="100" y="439" width="121" height="30"/>
+                    <rect key="frame" x="202" y="86" width="110" height="30"/>
                     <state key="normal" title="Clear All">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -57,19 +47,40 @@
                         <action selector="clearButtonPressed:" destination="-1" eventType="touchUpInside" id="jQx-Gl-OCz"/>
                     </connections>
                 </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="qXm-vA-Gs9">
+                    <rect key="frame" x="8" y="135" width="304" height="297"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                            <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="Qgl-OK-yB3"/>
+                    </connections>
+                </textView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="m0a-B9-UC2" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="86" id="01k-cS-Dbe"/>
-                <constraint firstItem="qXm-vA-Gs9" firstAttribute="centerX" secondItem="hFD-4r-igF" secondAttribute="centerX" id="8oE-S2-yyP"/>
+                <constraint firstItem="qXm-vA-Gs9" firstAttribute="centerX" secondItem="hFD-4r-igF" secondAttribute="centerX" constant="-97" id="8oE-S2-yyP"/>
                 <constraint firstItem="qXm-vA-Gs9" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="E8H-nN-7rU"/>
-                <constraint firstItem="qXm-vA-Gs9" firstAttribute="top" secondItem="m0a-B9-UC2" secondAttribute="bottom" constant="26" id="MPM-u7-XYj"/>
-                <constraint firstAttribute="bottom" secondItem="hFD-4r-igF" secondAttribute="bottom" constant="99" id="MgC-Hj-pMF"/>
+                <constraint firstItem="qXm-vA-Gs9" firstAttribute="top" secondItem="m0a-B9-UC2" secondAttribute="bottom" constant="19" id="MPM-u7-XYj"/>
+                <constraint firstAttribute="bottom" secondItem="hFD-4r-igF" secondAttribute="bottom" constant="452" id="MgC-Hj-pMF"/>
                 <constraint firstItem="qXm-vA-Gs9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="Ndu-UR-TSG"/>
-                <constraint firstItem="m0a-B9-UC2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="13" id="lEp-QS-fJX"/>
-                <constraint firstAttribute="trailing" secondItem="hFD-4r-igF" secondAttribute="trailing" constant="99" id="ozf-bB-LLo"/>
-                <constraint firstItem="hFD-4r-igF" firstAttribute="top" secondItem="qXm-vA-Gs9" secondAttribute="bottom" constant="18" id="p9h-5E-uX9"/>
-                <constraint firstItem="qXm-vA-Gs9" firstAttribute="centerX" secondItem="m0a-B9-UC2" secondAttribute="centerX" id="xcx-eG-VKY"/>
+                <constraint firstItem="m0a-B9-UC2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="lEp-QS-fJX"/>
+                <constraint firstAttribute="trailing" secondItem="hFD-4r-igF" secondAttribute="trailing" constant="8" id="ozf-bB-LLo"/>
+                <constraint firstItem="hFD-4r-igF" firstAttribute="top" secondItem="qXm-vA-Gs9" secondAttribute="bottom" constant="-346" id="p9h-5E-uX9"/>
+                <constraint firstItem="qXm-vA-Gs9" firstAttribute="centerX" secondItem="m0a-B9-UC2" secondAttribute="centerX" constant="49.5" id="xcx-eG-VKY"/>
             </constraints>
             <point key="canvasLocation" x="169" y="103"/>
         </view>
