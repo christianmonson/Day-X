@@ -9,7 +9,7 @@
 #import "ListViewController.h"
 #import "ListTableViewDataSource.h"
 #import "DetailViewController.h"
-
+#import "DetailContainerViewController.h"
 #import "EntryController.h"
 
 @interface ListViewController () <UITableViewDelegate>
@@ -35,29 +35,25 @@
     
     self.dataSource = [ListTableViewDataSource new];
     
+    self.title = @"Super Secret App of Secrets";
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
     [self.view addSubview:self.tableView];
     
     self.tableView.dataSource = self.dataSource;
     self.tableView.delegate = self;
     [self.dataSource registerTableView:self.tableView];
+    
 }
-
-//- (IBAction)add:(id)sender {
-//    DetailViewController *detailViewController = [DetailViewController new];
-//    [self.navigationController pushViewController:detailViewController animated:YES];
-//}
-
-
-// the problem was here!!! we needed to combine the above method with the one below
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     DetailViewController *detailViewController = [DetailViewController new];
-    [detailViewController updateWithEntry:[EntryController sharedInstance].entries[indexPath.row]];
-    [self.navigationController pushViewController:detailViewController animated:YES];
+//    [self.navigationController pushViewController:detailViewController animated:YES];
     
+    DetailContainerViewController *detailContainerViewController = [DetailContainerViewController new];
+    [detailViewController updateWithEntry:[EntryController sharedInstance].entries[indexPath.row]];
+    [self.navigationController pushViewController:detailContainerViewController animated:YES];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

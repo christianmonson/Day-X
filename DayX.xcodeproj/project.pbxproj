@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		6AB0F1751A89544100EA5DD9 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AB0F1731A89544100EA5DD9 /* DetailViewController.m */; };
 		6AB0F1761A89544100EA5DD9 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB0F1741A89544100EA5DD9 /* DetailViewController.xib */; };
-		6AB0F1791A89558A00EA5DD9 /* NoXibDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AB0F1781A89558A00EA5DD9 /* NoXibDetailViewController.m */; };
 		711A506A19388095005642EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 711A506919388095005642EF /* Foundation.framework */; };
 		711A506C19388095005642EF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 711A506B19388095005642EF /* CoreGraphics.framework */; };
 		711A506E19388095005642EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 711A506D19388095005642EF /* UIKit.framework */; };
@@ -26,6 +25,8 @@
 		EB54DA251A8BFF3100DE9720 /* ListTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = EB54DA241A8BFF3100DE9720 /* ListTableViewDataSource.m */; };
 		EB54DA281A8C1F8B00DE9720 /* EntryController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB54DA271A8C1F8B00DE9720 /* EntryController.m */; };
 		EB88F7A21A8ABAFA00DB4195 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = EB88F7A11A8ABAFA00DB4195 /* Entry.m */; };
+		EBC38C781A8D556A009A1DF0 /* DetailPageViewControllerDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC38C771A8D556A009A1DF0 /* DetailPageViewControllerDataSource.m */; };
+		EBC38C7B1A8D5FB9009A1DF0 /* DetailContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC38C7A1A8D5FB9009A1DF0 /* DetailContainerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,8 +43,6 @@
 		6AB0F1721A89544100EA5DD9 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		6AB0F1731A89544100EA5DD9 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		6AB0F1741A89544100EA5DD9 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
-		6AB0F1771A89558A00EA5DD9 /* NoXibDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoXibDetailViewController.h; sourceTree = "<group>"; };
-		6AB0F1781A89558A00EA5DD9 /* NoXibDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoXibDetailViewController.m; sourceTree = "<group>"; };
 		711A506619388095005642EF /* DayX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DayX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		711A506919388095005642EF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		711A506B19388095005642EF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -68,6 +67,10 @@
 		EB54DA271A8C1F8B00DE9720 /* EntryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EntryController.m; path = ../EntryController.m; sourceTree = "<group>"; };
 		EB88F7A01A8ABAFA00DB4195 /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entry.h; sourceTree = "<group>"; };
 		EB88F7A11A8ABAFA00DB4195 /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = "<group>"; };
+		EBC38C761A8D556A009A1DF0 /* DetailPageViewControllerDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailPageViewControllerDataSource.h; sourceTree = "<group>"; };
+		EBC38C771A8D556A009A1DF0 /* DetailPageViewControllerDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailPageViewControllerDataSource.m; sourceTree = "<group>"; };
+		EBC38C791A8D5FB9009A1DF0 /* DetailContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailContainerViewController.h; sourceTree = "<group>"; };
+		EBC38C7A1A8D5FB9009A1DF0 /* DetailContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailContainerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,21 +130,23 @@
 		711A506F19388095005642EF /* DayX */ = {
 			isa = PBXGroup;
 			children = (
-				EB54DA261A8C1F8B00DE9720 /* EntryController.h */,
-				EB54DA271A8C1F8B00DE9720 /* EntryController.m */,
 				711A507819388095005642EF /* DXAppDelegate.h */,
 				711A507919388095005642EF /* DXAppDelegate.m */,
-				EB54DA231A8BFF3100DE9720 /* ListTableViewDataSource.h */,
-				EB54DA241A8BFF3100DE9720 /* ListTableViewDataSource.m */,
 				EB88F7A01A8ABAFA00DB4195 /* Entry.h */,
 				EB88F7A11A8ABAFA00DB4195 /* Entry.m */,
+				EB54DA261A8C1F8B00DE9720 /* EntryController.h */,
+				EB54DA271A8C1F8B00DE9720 /* EntryController.m */,
+				EB54DA231A8BFF3100DE9720 /* ListTableViewDataSource.h */,
+				EB54DA241A8BFF3100DE9720 /* ListTableViewDataSource.m */,
 				EB54DA201A8BFD5300DE9720 /* ListViewController.h */,
 				EB54DA211A8BFD5300DE9720 /* ListViewController.m */,
 				6AB0F1721A89544100EA5DD9 /* DetailViewController.h */,
 				6AB0F1731A89544100EA5DD9 /* DetailViewController.m */,
 				6AB0F1741A89544100EA5DD9 /* DetailViewController.xib */,
-				6AB0F1771A89558A00EA5DD9 /* NoXibDetailViewController.h */,
-				6AB0F1781A89558A00EA5DD9 /* NoXibDetailViewController.m */,
+				EBC38C761A8D556A009A1DF0 /* DetailPageViewControllerDataSource.h */,
+				EBC38C771A8D556A009A1DF0 /* DetailPageViewControllerDataSource.m */,
+				EBC38C791A8D5FB9009A1DF0 /* DetailContainerViewController.h */,
+				EBC38C7A1A8D5FB9009A1DF0 /* DetailContainerViewController.m */,
 				711A507B19388095005642EF /* Images.xcassets */,
 				711A507019388095005642EF /* Supporting Files */,
 			);
@@ -274,13 +279,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AB0F1791A89558A00EA5DD9 /* NoXibDetailViewController.m in Sources */,
+				EBC38C781A8D556A009A1DF0 /* DetailPageViewControllerDataSource.m in Sources */,
 				EB88F7A21A8ABAFA00DB4195 /* Entry.m in Sources */,
 				EB54DA281A8C1F8B00DE9720 /* EntryController.m in Sources */,
 				EB54DA251A8BFF3100DE9720 /* ListTableViewDataSource.m in Sources */,
 				EB54DA221A8BFD5300DE9720 /* ListViewController.m in Sources */,
 				711A507A19388095005642EF /* DXAppDelegate.m in Sources */,
 				711A507619388095005642EF /* main.m in Sources */,
+				EBC38C7B1A8D5FB9009A1DF0 /* DetailContainerViewController.m in Sources */,
 				6AB0F1751A89544100EA5DD9 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

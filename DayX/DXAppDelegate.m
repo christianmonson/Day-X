@@ -8,7 +8,6 @@
 
 #import "DXAppDelegate.h"
 #import "DetailViewController.h"
-#import "NoXibDetailViewController.h"
 #import "ListViewController.h"
 
 @implementation DXAppDelegate
@@ -16,7 +15,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
     
     ListViewController *viewContorller = [ListViewController new];
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:viewContorller];

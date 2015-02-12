@@ -18,7 +18,6 @@ static NSString * const completeJournalEntryKey = @"completeJournalEntryKey";
 @property (strong, nonatomic) IBOutlet UITextField *titleTextField;
 @property (strong, nonatomic) IBOutlet UIButton *clearButton;
 @property (strong, nonatomic) IBOutlet UITextView *textView;
-
 @property (strong, nonatomic) Entry *entry;
 
 @end
@@ -72,6 +71,7 @@ static NSString * const completeJournalEntryKey = @"completeJournalEntryKey";
     self.titleTextField.text = journalEntryDictionary [titleKey];
     self.textView.text = journalEntryDictionary [textKey];
 }
+
 
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
