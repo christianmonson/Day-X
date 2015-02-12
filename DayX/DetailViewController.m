@@ -41,7 +41,7 @@ static NSString * const completeJournalEntryKey = @"completeJournalEntryKey";
     
     self.titleTextField.text = self.entry.title;
     self.textView.text = self.entry.text;
-    
+//    self.view.backgroundColor = [UIColor redColor];
     UIBarButtonItem *saveBarButton = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStylePlain target:self action:@selector(save:)];
     self.navigationItem.rightBarButtonItem = saveBarButton;
     
@@ -53,7 +53,7 @@ static NSString * const completeJournalEntryKey = @"completeJournalEntryKey";
 }
 
 
-- (IBAction)save:(id)sender {
+- (void)save:(id)sender {
     
     Entry *entry = [[Entry alloc]initWithDictionary:@{titleKey:self.titleTextField.text, textKey: self.textView.text}];
     

@@ -31,7 +31,11 @@
     [super viewDidLoad];
     
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(add:)];
+    UIBarButtonItem *editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(setEditing:)];
+    //self.navigationItem.leftBarButtonItem = editButton;
     self.navigationItem.rightBarButtonItem = addButton;
+    
+    
     
     self.dataSource = [ListTableViewDataSource new];
     
@@ -60,11 +64,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+
 - (void)add:(id)sender {
     
     DetailViewController *detailViewController = [DetailViewController new];
     [self.navigationController pushViewController:detailViewController animated:YES];
     
+}
+
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
+    [super setEditing:editing animated:animated];
 }
 
 /*
