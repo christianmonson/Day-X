@@ -69,7 +69,7 @@
                     </connections>
                 </textView>
             </subviews>
-            <color key="backgroundColor" red="0.17254902422428131" green="0.95686280727386475" blue="0.90980398654937744" alpha="1" colorSpace="deviceRGB"/>
+            <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="m0a-B9-UC2" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="86" id="01k-cS-Dbe"/>
                 <constraint firstItem="qXm-vA-Gs9" firstAttribute="centerX" secondItem="hFD-4r-igF" secondAttribute="centerX" constant="-97" id="8oE-S2-yyP"/>
