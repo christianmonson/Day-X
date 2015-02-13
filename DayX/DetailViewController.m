@@ -34,14 +34,14 @@ static NSString * const completeJournalEntryKey = @"completeJournalEntryKey";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.titleTextField.clearButtonMode = YES;
-    
     self.titleTextField.delegate = self;
     self.textView.delegate = self;
     
+    
     self.titleTextField.text = self.entry.title;
     self.textView.text = self.entry.text;
-//    self.view.backgroundColor = [UIColor redColor];
+    self.titleTextField.clearButtonMode = YES;
+self.view.backgroundColor = [UIColor colorWithRed:.8 green:.2 blue:.1 alpha:1];
     UIBarButtonItem *saveBarButton = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStylePlain target:self action:@selector(save:)];
     self.navigationItem.rightBarButtonItem = saveBarButton;
     

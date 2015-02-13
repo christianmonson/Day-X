@@ -16,8 +16,8 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    ListViewController *viewContorller = [ListViewController new];
-    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:viewContorller];
+    ListViewController *viewController = [ListViewController new];
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:viewController];
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

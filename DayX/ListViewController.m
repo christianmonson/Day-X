@@ -32,10 +32,8 @@
     
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(add:)];
     UIBarButtonItem *editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(setEditing:)];
-    //self.navigationItem.leftBarButtonItem = editButton;
+    self.navigationItem.leftBarButtonItem = editButton;
     self.navigationItem.rightBarButtonItem = addButton;
-    
-    
     
     self.dataSource = [ListTableViewDataSource new];
     
@@ -76,6 +74,7 @@
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated {
     [super setEditing:editing animated:animated];
 }
+
 
 /*
 #pragma mark - Navigation

@@ -8,6 +8,7 @@
 
 #import "ListTableViewDataSource.h"
 #import "EntryController.h"
+#import "Entry.h"
 
 @implementation ListTableViewDataSource
 
@@ -19,12 +20,12 @@
     return [EntryController sharedInstance].entries.count;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([UITableViewCell class])];
     
     Entry *entry = [EntryController sharedInstance].entries[indexPath.row];
     cell.textLabel.text = entry.title;
+
     
     return cell;
 }
@@ -39,4 +40,5 @@
 - (BOOL) tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     return YES;
 }
+
 @end

@@ -40,7 +40,6 @@ static NSString * const entryListKey = @"entryList";
     
     self.entries = mutableEntries;
     [self synchronize];
-
 }
 
 - (void)removeEntry:(Entry *)entry{
@@ -57,7 +56,7 @@ static NSString * const entryListKey = @"entryList";
 }
 
 - (void)replaceEntry:(NSDictionary *)oldEntry withEntry:(NSDictionary *)newEntry{
-    
+   
     if (!oldEntry || !newEntry) {
         return;
     }
@@ -68,22 +67,19 @@ static NSString * const entryListKey = @"entryList";
         NSInteger index = [mutableEntries indexOfObject:oldEntry];
         [mutableEntries replaceObjectAtIndex:index withObject:newEntry];
     }
-    
     self.entries = mutableEntries;
     [self synchronize];
-
 }
 
 - (void) loadFromDefaults {
+    
     NSArray *entryDictionaries = [[NSUserDefaults standardUserDefaults] objectForKey:entryListKey];
     
     NSMutableArray *entries = [NSMutableArray new];
     for (NSDictionary *entry in entryDictionaries) {
         [entries addObject:[[Entry alloc] initWithDictionary:entry]];
     }
-    
     self.entries = entries;
-    
 }
 
 - (void)synchronize {
