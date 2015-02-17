@@ -19,7 +19,7 @@
 
 -(UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
     NSInteger afterIndex = ((DetailViewController *) viewController).index +1;
-    return [self viewControllerAtIndexWithNew:afterIndex];
+    return [self viewControllerAtIndex:afterIndex];
 }
 
 -(UIViewController *)viewControllerAtIndex:(NSInteger)index{
@@ -33,18 +33,18 @@
     return detailViewController;
 }
 
--(UIViewController *)viewControllerAtIndexWithNew:(NSInteger)index{
-    if (index < 0)  {
-        return nil;
-    }
-        else if (index >= [EntryController sharedInstance].entries.count) {
-            DetailViewController *newDetailViewController = [DetailViewController new];
-            return newDetailViewController;
-        }
-    DetailViewController * detailViewController = [DetailViewController new];
-    detailViewController.index = index;
-    [detailViewController updateWithEntry: [EntryController sharedInstance].entries[index]];
-    
-    return detailViewController;
-}
+//-(UIViewController *)viewControllerAtIndexWithNew:(NSInteger)index{
+//    if (index == 0)  {
+//        return nil;
+//    }
+//        else if (index >= [EntryController sharedInstance].entries.count) {
+//            DetailViewController *newDetailViewController = [DetailViewController new];
+//            return newDetailViewController;
+//        }
+//    DetailViewController * detailViewController = [DetailViewController new];
+//    detailViewController.index = index;
+//    [detailViewController updateWithEntry: [EntryController sharedInstance].entries[index]];
+//    
+//    return detailViewController;
+//}
 @end

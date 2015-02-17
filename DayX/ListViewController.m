@@ -50,11 +50,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    DetailViewController *detailViewController = [DetailViewController new];
-//    [self.navigationController pushViewController:detailViewController animated:YES];
-    
     DetailContainerViewController *detailContainerViewController = [DetailContainerViewController new];
-    [detailViewController updateWithEntry:[EntryController sharedInstance].entries[indexPath.row]];
+    detailContainerViewController.initialIndex = indexPath.row;
     [self.navigationController pushViewController:detailContainerViewController animated:YES];
 }
 - (void)didReceiveMemoryWarning {

@@ -27,7 +27,7 @@
     self.pageViewController.dataSource = self.dataSource;
     
     
-    [self.pageViewController setViewControllers:@[[self.dataSource viewControllerAtIndex:0]]direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+    [self.pageViewController setViewControllers:@[[self.dataSource viewControllerAtIndex:self.initialIndex]]direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
     
     [self addChildViewController:self.pageViewController];
     [self.view addSubview:self.pageViewController.view];

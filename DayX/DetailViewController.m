@@ -15,7 +15,7 @@ static NSString * const completeJournalEntryKey = @"completeJournalEntryKey";
 
 @interface DetailViewController () <UITextViewDelegate, UITextFieldDelegate>
 
-@property (strong, nonatomic) IBOutlet UITextField *titleTextField;
+@property (strong, nonatomic) IBOutlet UITextField *textField;
 @property (strong, nonatomic) IBOutlet UIButton *clearButton;
 @property (strong, nonatomic) IBOutlet UITextView *textView;
 @property (strong, nonatomic) Entry *entry;
@@ -24,38 +24,40 @@ static NSString * const completeJournalEntryKey = @"completeJournalEntryKey";
 
 @implementation DetailViewController
 
-- (void) updateWithEntry:(Entry *)entry {
+- (void)updateWithEntry:(Entry *)entry {
     self.entry = entry;
     
-    self.titleTextField.text = entry.title;
+    self.textField.text = entry.title;
     self.textView.text = entry.text;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.titleTextField.delegate = self;
+    self.textField.delegate = self;
     self.textView.delegate = self;
     
-    
-    self.titleTextField.text = self.entry.title;
+    self.textField.text = self.entry.title;
     self.textView.text = self.entry.text;
-    self.titleTextField.clearButtonMode = YES;
-self.view.backgroundColor = [UIColor colorWithRed:.8 green:.2 blue:.1 alpha:1];
+    
+    self.textField.clearButtonMode = YES;
+    
+    self.view.backgroundColor = [UIColor colorWithRed:0.803 green:0.921 blue:1.000 alpha:1.000];
+   
     UIBarButtonItem *saveBarButton = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStylePlain target:self action:@selector(save:)];
     self.navigationItem.rightBarButtonItem = saveBarButton;
     
 }
 
 - (IBAction)clearButtonPressed:(id)sender {
-    self.titleTextField.text = @"";
+    self.textField.text = @"";
     self.textView.text = @"";
 }
 
 
 - (void)save:(id)sender {
     
-    Entry *entry = [[Entry alloc]initWithDictionary:@{titleKey:self.titleTextField.text, textKey: self.textView.text}];
+    Entry *entry = [[Entry alloc]initWithDictionary:@{titleKey:self.textField.text, textKey: self.textView.text}];
     
     if (self.entry) {
         [[EntryController sharedInstance] replaceEntry:self.entry withEntry:entry];
@@ -66,13 +68,6 @@ self.view.backgroundColor = [UIColor colorWithRed:.8 green:.2 blue:.1 alpha:1];
     
     [self.navigationController popViewControllerAnimated:1];
 }
-
-- (void) updateViewWithJournalDictionary: (NSDictionary *) journalEntryDictionary {
-    self.titleTextField.text = journalEntryDictionary [titleKey];
-    self.textView.text = journalEntryDictionary [textKey];
-}
-
-
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
