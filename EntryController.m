@@ -7,12 +7,13 @@
 //
 
 #import "EntryController.h"
+#import "Stack.h"
 
 static NSString * const entryListKey = @"entryList";
 
 @interface EntryController ()
 
-@property (nonatomic,strong) NSArray *entries;
+@property (nonatomic, strong) NSArray *entries;
 
 @end
 
@@ -24,73 +25,40 @@ static NSString * const entryListKey = @"entryList";
     dispatch_once(&onceToken, ^{
         sharedInstance = [[EntryController alloc] init];
         
-        [sharedInstance loadFromDefaults];
     });
     return sharedInstance;
 }
 
-- (void)addEntry:(Entry *)entry{
+- (NSArray *)entries {
     
-    if (!entry) {
-        return;
-    }
+    return [[Stack sharedInstance].managedObjectContext executeFetchRequest:[NSFetchRequest fetchRequestWithEntityName:@"Entry"] error:NULL];
+
+}
+
+- (void)addEntryWithTitle:(NSString *)title text:(NSString *)text andDate:(NSDate *)date {
     
-    NSMutableArray *mutableEntries = [[NSMutableArray alloc] initWithArray:self.entries];
-    [mutableEntries addObject:entry];
+    Entry *entry = [NSEntityDescription insertNewObjectForEntityForName:@"Entry" inManagedObjectContext:[Stack sharedInstance].managedObjectContext];
     
-    self.entries = mutableEntries;
+    entry.title = title;
+    entry.text = text;
+    entry.timestamp = date;
+    
     [self synchronize];
 }
 
 - (void)removeEntry:(Entry *)entry{
     
-    if (!entry) {
-        return;
-    }
+//    [[Stack sharedInstance].managedObjectContext deleteObject:entry];
+    [entry.managedObjectContext deleteObject: entry];
     
-    NSMutableArray *mutableEntries = self.entries.mutableCopy;
-    [mutableEntries removeObject:entry];
-    
-    self.entries = mutableEntries;
     [self synchronize];
+
 }
 
-- (void)replaceEntry:(NSDictionary *)oldEntry withEntry:(NSDictionary *)newEntry{
-   
-    if (!oldEntry || !newEntry) {
-        return;
-    }
-    
-    NSMutableArray *mutableEntries = self.entries.mutableCopy;
-    
-    if ([mutableEntries containsObject:oldEntry]) {
-        NSInteger index = [mutableEntries indexOfObject:oldEntry];
-        [mutableEntries replaceObjectAtIndex:index withObject:newEntry];
-    }
-    self.entries = mutableEntries;
-    [self synchronize];
-}
-
-- (void) loadFromDefaults {
-    
-    NSArray *entryDictionaries = [[NSUserDefaults standardUserDefaults] objectForKey:entryListKey];
-    
-    NSMutableArray *entries = [NSMutableArray new];
-    for (NSDictionary *entry in entryDictionaries) {
-        [entries addObject:[[Entry alloc] initWithDictionary:entry]];
-    }
-    self.entries = entries;
-}
 
 - (void)synchronize {
     
-    NSMutableArray *entryDictionaries = [NSMutableArray new];
-    for (Entry *entry in self.entries) {
-        [entryDictionaries addObject:[entry entryDictionary]];
-    }
-    
-    [[NSUserDefaults standardUserDefaults] setObject:entryDictionaries forKey:entryListKey];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    [[Stack sharedInstance].managedObjectContext save:NULL];
 }
 
 @end

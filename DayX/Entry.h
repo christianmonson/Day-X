@@ -2,24 +2,18 @@
 //  Entry.h
 //  DayX
 //
-//  Created by Christian Monson on 2/10/15.
+//  Created by Christian Monson on 2/25/15.
 //  Copyright (c) 2015 DevMountain. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
-static NSString * const titleKey = @"title";
-static NSString * const textKey = @"text";
-static NSString * const timestampKey = @"timestamp";
 
-@interface Entry : NSObject
+@interface Entry : NSManagedObject
 
-@property (nonatomic, strong) NSString *title;
-@property (nonatomic, strong) NSString *text;
-@property (nonatomic, strong) NSDate *timestamp;
-
-- (id)initWithDictionary:(NSDictionary *)dictionary;
-
-- (NSDictionary *)entryDictionary;
+@property (nonatomic, retain) NSString * title;
+@property (nonatomic, retain) NSString * text;
+@property (nonatomic, retain) NSDate * timestamp;
 
 @end
