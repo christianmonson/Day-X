@@ -7,8 +7,7 @@
 //
 
 #import "ListTableViewDataSource.h"
-#import "EntryController.h"
-#import "Entry.h"
+#import <DayXKit/DayXKit.h>
 
 @implementation ListTableViewDataSource
 

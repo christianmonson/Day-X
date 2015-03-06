@@ -8,7 +8,7 @@
 
 #import "DetailPageViewControllerDataSource.h"
 #import "DetailViewController.h"
-#import "EntryController.h"
+#import <DayXKit/DayXKit.h>
 
 @implementation DetailPageViewControllerDataSource
 

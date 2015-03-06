@@ -7,7 +7,7 @@
 //
 
 #import "DetailViewController.h"
-#import "EntryController.h"
+#import <DayXKit/DayXKit.h>
 
 static NSString * const entryTitleKey = @"entryTitleKey";
 static NSString * const  entryTextKey = @"entryTextKey";

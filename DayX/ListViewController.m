@@ -10,7 +10,7 @@
 #import "ListTableViewDataSource.h"
 #import "DetailViewController.h"
 #import "DetailContainerViewController.h"
-#import "EntryController.h"
+#import <DayXKit/DayXKit.h>
 
 @interface ListViewController () <UITableViewDelegate>
 
@@ -37,7 +37,7 @@
     
     self.dataSource = [ListTableViewDataSource new];
     
-    self.title = @"Super Secret App of Secrets";
+    self.title = @"Entries";
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
     [self.view addSubview:self.tableView];
     
