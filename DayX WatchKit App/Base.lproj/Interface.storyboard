@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6750" systemVersion="14C109" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6735"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
+    </dependencies>
+    <scenes>
+        <!--Entries-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller title="Entries" id="AgC-eL-Hgc" customClass="DXEntryListInterfaceController">
+                    <items>
+                        <table alignment="left" id="HQT-Ca-hq5">
+                            <items>
+                                <tableRow identifier="entryRow" id="q1k-eJ-u24" customClass="DXEntryRowController">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" id="spT-Kg-hhC">
+                                        <items>
+                                            <label alignment="left" verticalAlignment="center" text="Label" numberOfLines="0" id="pC8-WC-l3o">
+                                                <color key="textColor" red="1" green="0.074020686490000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </label>
+                                        </items>
+                                        <edgeInsets key="margins" left="0.0" right="0.0" top="6" bottom="6"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="entryTitle" destination="pC8-WC-l3o" id="5js-iS-hJw"/>
+                                        <segue destination="4L7-PH-mk4" kind="push" identifier="rowSelected" id="XOs-FO-ylB"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="entriesTable" destination="HQT-Ca-hq5" id="Zh4-jO-bhZ"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="235" y="347"/>
+        </scene>
+        <!--Detail-->
+        <scene sceneID="6p0-MO-TrL">
+            <objects>
+                <controller title="Detail" id="4L7-PH-mk4" customClass="DXEntryDetailInterfaceController">
+                    <items>
+                        <label alignment="left" text="Label" numberOfLines="0" id="QBr-Vf-Lpe">
+                            <color key="textColor" red="1" green="0.074020686490000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
+                        <separator alignment="left" id="SVT-tq-XBg"/>
+                        <label alignment="left" text="Label" numberOfLines="0" id="KFU-2D-soy">
+                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                    </items>
+                    <connections>
+                        <outlet property="entryText" destination="KFU-2D-soy" id="kIx-9w-ros"/>
+                        <outlet property="entryTitle" destination="QBr-Vf-Lpe" id="fK0-io-jij"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="468" y="345"/>
+        </scene>
+        <!--Glance Interface Controller-->
+        <scene sceneID="BOz-TT-tkC">
+            <objects>
+                <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController">
+                    <items>
+                        <group alignment="left" id="t8f-Gd-c4y"/>
+                        <group alignment="left" id="uCw-4Q-Ouw"/>
+                    </items>
+                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
+                </glanceController>
+            </objects>
+            <point key="canvasLocation" x="235" y="672"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="XkS-y5-khE"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="XkS-y5-khE" id="49B-RR-99y"/>
+                        <segue destination="gdX-wl-uQE" kind="relationship" relationship="dynamicNotificationInterface" id="fKh-qV-3T2"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="235" y="1001"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="KIl-fV-djm">
+            <objects>
+                <controller id="gdX-wl-uQE" customClass="NotificationController"/>
+            </objects>
+            <point key="canvasLocation" x="553" y="1001"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+</document>
